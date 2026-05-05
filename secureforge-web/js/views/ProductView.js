@@ -14,13 +14,16 @@ export default class ProductView {
             const button = e.target.closest('.btn-action');
             if (button) {
                 const productName = button.getAttribute('data-name');
-                this.handleAcquire(productName);
+                const productPrice = button.getAttribute('data-price');
+                this.handleAcquire(productName, productPrice);
             }
         });
     }
 
-    handleAcquire(name) {
-        alert(`Iniciando solicitud para ${name}`);
+    handleAcquire(name, price) {
+        window.dispatchEvent(new CustomEvent('secureforge:checkout', {
+            detail: { name, price }
+        }));
     }
 
     render(products) {
@@ -29,7 +32,7 @@ export default class ProductView {
     }
 
     _createCard(product) {
-        const tags = product.techStack
+        const tags = product.tech_stack
             .map(tech => `<span class="px-2 py-1 bg-gray-900 border border-gray-700 rounded text-xs text-gray-400">${tech}</span>`)
             .join('');
 
@@ -41,7 +44,7 @@ export default class ProductView {
                             <i class="ph ${product.icon}"></i>
                         </div>
                         <span class="px-3 py-1 bg-brand-dark border border-gray-700 rounded-full text-xs text-brand-green">
-                            ${product.type}
+                            ${product.product_type}
                         </span>
                     </div>
                     <h3 class="text-2xl font-poppins font-semibold text-white mb-2">${product.title}</h3>
@@ -51,9 +54,9 @@ export default class ProductView {
                 <div class="bg-brand-dark/50 p-6 border-t border-gray-800 flex justify-between items-center">
                     <div class="flex flex-col">
                         <span class="text-[10px] text-gray-500 uppercase tracking-widest">Licencia</span>
-                        <span class="font-mono text-white font-bold">${product.price}</span>
+                        <span class="font-mono text-white font-bold">$${product.price_cop.toLocaleString()} COP</span>
                     </div>
-                    <button class="btn-action px-5 py-2 rounded text-xs font-bold" data-name="${product.title}">
+                    <button class="btn-action px-5 py-2 rounded text-xs font-bold uppercase tracking-widest" data-name="${product.title}" data-price="$${product.price_cop.toLocaleString()} COP">
                         Adquirir
                     </button>
                 </div>

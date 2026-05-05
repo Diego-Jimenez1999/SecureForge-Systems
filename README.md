@@ -1,53 +1,49 @@
-# 🔐 SecureForge Systems
+# SecureForge Systems
 
-Plataforma de desarrollo de software enfocada en seguridad, autenticación y construcción de sistemas robustos.
+Monorepo con dos proyectos:
 
----
+- `secureauth-desktop`: aplicación Java Swing con autenticación segura.
+- `secureforge-web`: landing/catálogo web con arquitectura MVC en JavaScript.
 
-## 🚀 Proyectos incluidos
+## Estructura
 
-### 🖥️ SecureAuth Desktop
-Sistema de autenticación y gestión de usuarios desarrollado en Java.
+```text
+SecureForge_Systems/
+  secureauth-desktop/
+    pom.xml
+    src/
+  secureforge-web/
+    index.html
+    css/
+    js/
+      app.js
+      controllers/
+      models/
+      views/
+      services/
+```
 
-**Características:**
-- Arquitectura por capas (Model, DAO, UI)
-- Preparado para implementación de Controller
-- Integración futura con base de datos (MySQL)
-- Componentes UI reutilizables
+## Ejecución rápida
 
----
+1. Backend desktop:
+```bash
+cd secureauth-desktop
+mvn test
+mvn exec:java
+```
 
-## 🧱 Tecnologías
+2. Frontend web:
+```bash
+cd secureforge-web
+# abrir index.html con un servidor estático local
+```
 
-- Java (Swing)
-- Maven
-- MySQL (en proceso)
-- HTML, CSS, JavaScript (para módulos web futuros)
+## Configuración backend
 
----
-
-## 📌 Estado del proyecto
-
-🔧 En desarrollo activo
-
-### Avances:
-- Estructura base del proyecto
-- Modelos de datos (User, Mascota)
-- Componentes UI reutilizables
-
-### Próximos pasos:
-- Implementación de Controller
-- Conexión con base de datos
-- Sistema de autenticación completo
-
----
-
-## 🎯 Objetivo
-
-Crear una base sólida para sistemas seguros reutilizables que puedan escalar a productos comerciales.
-
----
-
-## 👨‍💻 Autor
-
-Diego Jiménez
+- Perfil por defecto: `dev`
+- Perfil producción: `prod` (`application-prod.properties`)
+- Variables de entorno soportadas:
+  - `DB_URL`
+  - `DB_USERNAME`
+  - `DB_PASSWORD`
+  - `APP_PROFILE`

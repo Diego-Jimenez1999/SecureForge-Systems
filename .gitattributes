@@ -1,0 +1,10 @@
+# Comportamiento automático por defecto
+* text=auto
+
+# Asegurar que archivos de código siempre se traten como texto
+*.java text
+*.html text
+*.js text
+*.css text
+*.properties text
+*.md text

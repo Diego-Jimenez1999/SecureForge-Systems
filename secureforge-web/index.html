@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SecureForge Systems | Arquitectura de Seguridad</title>
+    <link rel="icon" type="image/png" href="assets/Forge_Lock.png">
+    <link rel="apple-touch-icon" href="assets/Forge_Lock.png">
+    
+    <!-- Fuentes e Iconos -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- Framework de Utilidades (Tailwind) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#0F172A', green: '#22C55E', light: '#E5E7EB', card: '#1E293B', nequi: '#E32A75'
+                        }
+                    },
+                    fontFamily: {
+                        poppins: ['Poppins', 'sans-serif'], inter: ['Inter', 'sans-serif'], mono: ['JetBrains Mono', 'monospace']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Estilos Personalizados -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="antialiased flex flex-col min-h-screen bg-brand-dark text-brand-light">
+
+    <header class="header fixed w-full top-0 z-50 bg-brand-dark/90 backdrop-blur-md border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center gap-3">
+                    <i class="ph ph-lock-key text-brand-green text-3xl"></i>
+                    <span class="font-poppins font-bold text-2xl tracking-wide text-white">Secure<span class="text-brand-green">Forge</span></span>
+                </div>
+
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#servicios" class="nav-link">Servicios</a>
+                    <a href="#productos" class="nav-link">Proyectos</a>
+                    <a href="#generar" class="nav-link">Nuevo Proyecto</a>
+                    <a href="#contacto" class="nav-link">Contacto</a>
+                </nav>
+
+                <div class="hidden md:flex">
+                    <a href="#generar" class="btn-action py-2 px-6 rounded-md font-semibold">Iniciar Proyecto</a>
+                </div>
+
+                <button id="mobile-menu-btn" class="md:hidden text-brand-light">
+                    <i class="ph ph-list text-3xl"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        <!-- Hero Section -->
+        <section class="pt-32 pb-20 lg:pt-48 px-4 max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12">
+            <div class="flex-1 text-center lg:text-left">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-card border border-brand-green/30 text-brand-green text-sm font-mono mb-6">
+                    <i class="ph ph-shield-check"></i> <span>Protocolo SecureForge v1.0</span>
+                </div>
+                <h1 class="text-4xl lg:text-6xl font-bold font-poppins text-white leading-tight mb-6">
+                    Sistemas de <span class="text-gradient">Alta Seguridad</span>
+                </h1>
+                <p class="text-lg text-brand-light/80 mb-8 max-w-2xl font-inter">
+                    Ingeniería de software modular y arquitectura escalable diseñada para proteger activos digitales críticos.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                    <a href="#productos" class="btn-action py-3 px-8 rounded-md text-center">Catálogo de Proyectos</a>
+                    <a href="#servicios" class="btn-secondary py-3 px-8 rounded-md text-center border border-brand-green text-brand-green">Ver Servicios</a>
+                </div>
+            </div>
+            
+            <!-- Dashboard Mockup -->
+            <div class="flex-1 w-full max-w-lg relative">
+                <div class="absolute -inset-1 bg-brand-green/20 blur-2xl rounded-full"></div>
+                <div class="relative bg-brand-card border border-gray-700 rounded-xl p-6 shadow-2xl font-mono text-sm">
+                    <div class="flex gap-2 mb-4 border-b border-gray-700 pb-4">
+                        <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                        <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                        <span class="text-xs text-gray-500">secure_forge.sys</span>
+                    </div>
+                    <p class="text-brand-green">class <span class="text-white">SystemShield</span> {</p>
+                    <p class="pl-4 text-gray-400">constructor() { this.active = true; }</p>
+                    <p class="text-brand-green">}</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Servicios Section -->
+        <section id="servicios" class="py-20 bg-brand-dark/50 border-t border-gray-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="mb-12 text-center lg:text-left">
+                    <h2 class="text-3xl font-poppins font-bold text-white mb-2">Nuestros Servicios</h2>
+                    <div class="h-1 w-20 bg-brand-green mx-auto lg:mx-0"></div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="p-8 bg-brand-card rounded-xl border border-gray-800 hover:border-brand-green/50 transition-colors">
+                        <i class="ph ph-code text-brand-green text-4xl mb-4"></i>
+                        <h3 class="text-xl font-bold text-white mb-2">Desarrollo a Medida</h3>
+                        <p class="text-brand-light/60 text-sm">Sistemas robustos construidos con las últimas tecnologías y patrones de diseño modernos.</p>
+                    </div>
+                    <div class="p-8 bg-brand-card rounded-xl border border-gray-800 hover:border-brand-green/50 transition-colors">
+                        <i class="ph ph-shield-checkered text-brand-green text-4xl mb-4"></i>
+                        <h3 class="text-xl font-bold text-white mb-2">Auditoría de Seguridad</h3>
+                        <p class="text-brand-light/60 text-sm">Análisis profundo de vulnerabilidades y fortalecimiento de infraestructura digital.</p>
+                    </div>
+                    <div class="p-8 bg-brand-card rounded-xl border border-gray-800 hover:border-brand-green/50 transition-colors">
+                        <i class="ph ph-cpu text-brand-green text-4xl mb-4"></i>
+                        <h3 class="text-xl font-bold text-white mb-2">Consultoría Técnica</h3>
+                        <p class="text-brand-light/60 text-sm">Asesoramiento en arquitectura de software y escalabilidad de sistemas críticos.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Productos Section -->
+        <section id="productos" class="py-20 bg-brand-dark">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="mb-12">
+                    <h2 class="text-3xl font-poppins font-bold text-white mb-2">Proyectos & Librerías</h2>
+                    <div class="h-1 w-20 bg-brand-green"></div>
+                </div>
+                <div id="products-container" class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <!-- Renderizado dinámico vía MVC -->
+                </div>
+            </div>
+        </section>
+
+        <section id="generar" class="py-24 border-t border-gray-800 bg-brand-dark">
+            <div class="max-w-7xl mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-poppins font-bold text-white mb-4 italic tracking-tighter">GENERAR PROYECTO</h2>
+                    <p class="text-brand-light/60">Describe tu idea y nuestro sistema procesará el alcance técnico.</p>
+                </div>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    <div class="bg-brand-card p-8 rounded-xl border border-gray-800 shadow-xl">
+                        <form id="project-form" class="space-y-6">
+                            <div>
+                                <label class="text-[10px] font-bold text-brand-green uppercase mb-2 block tracking-widest">Nombre del Solicitante</label>
+                                <input type="text" id="client-name" class="w-full bg-brand-dark border border-gray-700 rounded p-4 text-white transition-colors" placeholder="Tu nombre">
+                            </div>
+                            <div>
+                                <label class="text-[10px] font-bold text-brand-green uppercase mb-2 block tracking-widest">Descripción Detallada</label>
+                                <textarea id="project-desc" rows="5" class="w-full bg-brand-dark border border-gray-700 rounded p-4 text-white transition-colors resize-none" placeholder="¿Qué necesitas construir?"></textarea>
+                            </div>
+                            <button type="button" id="generate-btn" class="w-full btn-action py-4 rounded font-bold text-sm tracking-widest uppercase">Procesar Requerimientos</button>
+                        </form>
+                    </div>
+                    <div class="bg-black/40 border border-brand-green/20 rounded-xl p-8 font-mono text-sm min-h-[400px]">
+                        <div id="briefing-content" class="text-brand-light/40">
+                            <p class="animate-pulse">> CONSOLA DE ANÁLISIS ESPERANDO DATOS...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contacto" class="py-24 bg-brand-dark">
+            <div class="max-w-7xl mx-auto px-4 w-full">
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+                    <div class="space-y-8">
+                        <div>
+                            <h2 class="text-3xl font-poppins font-bold text-white mb-6 uppercase tracking-tighter">Canales de <br><span class="text-brand-green">Comunicación</span></h2>
+                            <p class="text-brand-light/60 leading-relaxed mb-8">Si tienes un proyecto en mente o necesitas soporte técnico, utiliza el formulario o contáctame directamente.</p>
+                        </div>
+
+                        <div class="space-y-6">
+                            <div class="flex items-center gap-4 p-4 rounded-xl border border-gray-800 bg-brand-card/30">
+                                <div class="w-12 h-12 rounded bg-brand-card flex items-center justify-center text-brand-green border border-gray-700">
+                                    <i class="ph ph-envelope-simple text-2xl"></i>
+                                </div>
+                                <div>
+                                    <p class="text-[10px] font-bold text-gray-500 uppercase">Correo Personal</p>
+                                    <p class="text-brand-light text-sm">diego.jimez.22@gmail.com</p>
+                                </div>
+                            </div>
+
+                            <div class="flex flex-col gap-4 bg-brand-dark/30 p-5 rounded-xl border border-gray-800">
+                                <div class="flex items-center gap-4">
+                                    <div class="w-12 h-12 rounded bg-brand-card flex items-center justify-center text-brand-green border border-gray-700">
+                                        <i class="ph ph-whatsapp-logo text-2xl"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-[10px] font-bold text-gray-500 uppercase">WhatsApp</p>
+                                        <p class="text-white font-mono text-sm">3043042589</p>
+                                    </div>
+                                </div>
+                                <a href="https://wa.me/573043042589" target="_blank" rel="noopener noreferrer" class="w-full bg-green-600 hover:bg-green-500 text-white py-3 rounded-lg text-center font-bold text-xs uppercase tracking-widest flex items-center justify-center gap-2 transition-all">
+                                    <i class="ph ph-chat-circle-dots"></i> Iniciar Chat
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-2">
+                        <div class="bg-brand-card p-8 rounded-xl border border-gray-800 shadow-xl">
+                            <form id="contact-form" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div class="space-y-2">
+                                    <label class="text-[10px] font-bold text-brand-green uppercase tracking-widest">Nombre Completo</label>
+                                    <input type="text" id="contact-name" class="w-full bg-brand-dark border border-gray-700 rounded p-3 text-white transition-colors" placeholder="Tu nombre" required>
+                                </div>
+                                <div class="space-y-2">
+                                    <label class="text-[10px] font-bold text-brand-green uppercase tracking-widest">Tu Correo</label>
+                                    <input type="email" id="contact-email" class="w-full bg-brand-dark border border-gray-700 rounded p-3 text-white transition-colors" placeholder="correo@ejemplo.com" required>
+                                </div>
+                                <div class="md:col-span-2 space-y-2">
+                                    <label class="text-[10px] font-bold text-brand-green uppercase tracking-widest">Asunto</label>
+                                    <input type="text" id="contact-subject" class="w-full bg-brand-dark border border-gray-700 rounded p-3 text-white transition-colors" placeholder="Ej. Presupuesto para App Web" required>
+                                </div>
+                                <div class="md:col-span-2 space-y-2">
+                                    <label class="text-[10px] font-bold text-brand-green uppercase tracking-widest">Detalles del Mensaje</label>
+                                    <textarea id="contact-message" rows="5" class="w-full bg-brand-dark border border-gray-700 rounded p-3 text-white transition-colors" placeholder="Escribe aquí tu solicitud..." required></textarea>
+                                </div>
+                                <div class="md:col-span-2">
+                                    <button type="button" id="send-contact-btn" class="w-full btn-action py-4 rounded font-bold uppercase tracking-widest text-sm flex items-center justify-center gap-2 shadow-lg group">
+                                        <i class="ph ph-paper-plane-tilt group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"></i>
+                                        Enviar Mensaje a Diego
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                        <p class="text-[10px] text-gray-600 mt-4 text-center font-mono uppercase tracking-widest italic">
+                            Al hacer clic, se redactará un correo automático a diego.jimez.22@gmail.com
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="payment-modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 bg-brand-dark/95 backdrop-blur-md">
+        <div class="bg-brand-card w-full max-w-md rounded-2xl border border-gray-700 overflow-hidden shadow-2xl">
+            <div class="bg-brand-nequi p-6 flex justify-between items-center text-white">
+                <div class="flex items-center gap-2">
+                    <i class="ph ph-qr-code text-2xl"></i>
+                    <span class="font-bold font-poppins tracking-tight uppercase">Checkout Nequi</span>
+                </div>
+                <button id="close-modal" class="hover:bg-black/20 rounded-full p-1" aria-label="Cerrar modal">
+                    <i class="ph ph-x"></i>
+                </button>
+            </div>
+            <div class="p-8">
+                <div class="mb-6 border-b border-gray-800 pb-4">
+                    <p id="target-name" class="text-white font-bold text-lg mb-1"></p>
+                    <p id="target-price" class="text-brand-green font-mono text-2xl font-bold"></p>
+                </div>
+                <div class="space-y-6 text-sm">
+                    <div class="bg-brand-dark p-5 rounded-lg border border-brand-nequi/30 flex items-center gap-4">
+                        <div class="w-12 h-12 bg-brand-nequi/20 rounded-full flex items-center justify-center text-brand-nequi text-2xl font-bold">N</div>
+                        <div>
+                            <p class="text-[10px] text-gray-500 font-bold uppercase">Enviar al número Nequi</p>
+                            <p class="text-white font-mono text-xl">3043042589</p>
+                        </div>
+                    </div>
+                    <p class="text-[10px] text-gray-500 text-center italic uppercase">Adjunta el comprobante para habilitar el servicio inmediatamente.</p>
+                    <button id="confirm-pay" class="w-full bg-brand-nequi text-white py-4 rounded font-bold uppercase tracking-widest text-xs">
+                        Confirmar Pago
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-brand-dark border-t border-gray-800 py-8 text-center text-sm text-gray-500">
+        <p>&copy; 2026 SecureForge Systems. Arquitectura MVC.</p>
+    </footer>
+
+    <script type="module" src="js/app.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const sendBtn = document.getElementById('send-contact-btn');
+            const paymentModal = document.getElementById('payment-modal');
+            const closeModalBtn = document.getElementById('close-modal');
+            const confirmPayBtn = document.getElementById('confirm-pay');
+            const targetName = document.getElementById('target-name');
+            const targetPrice = document.getElementById('target-price');
+            const generateBtn = document.getElementById('generate-btn');
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const navMenu = document.querySelector('nav.hidden.md\\:flex');
+
+            if (!sendBtn) {
+                return;
+            }
+
+            mobileMenuBtn.onclick = () => {
+                // Lógica simple para toggle de menú móvil (necesitaría clases CSS adicionales)
+                alert('Funcionalidad de menú móvil en desarrollo.');
+            };
+
+            window.addEventListener('secureforge:checkout', (event) => {
+                const { name, price } = event.detail;
+                targetName.textContent = name;
+                targetPrice.textContent = price;
+                paymentModal.classList.replace('hidden', 'flex');
+                document.body.style.overflow = 'hidden';
+            });
+
+            closeModalBtn.onclick = () => {
+                paymentModal.classList.replace('flex', 'hidden');
+                document.body.style.overflow = 'auto';
+            };
+
+            confirmPayBtn.onclick = () => {
+                alert('Pago registrado. Envíanos tu comprobante por WhatsApp al 3043042589 para activar el servicio.');
+                paymentModal.classList.replace('flex', 'hidden');
+                document.body.style.overflow = 'auto';
+            };
+
+            if (generateBtn) {
+                generateBtn.onclick = () => {
+                    const name = document.getElementById('client-name').value.trim();
+                    const desc = document.getElementById('project-desc').value.trim();
+                    const out = document.getElementById('briefing-content');
+
+                    if (!desc) {
+                        alert('Por favor, redacta tu idea.');
+                        return;
+                    }
+
+                    out.innerHTML = '<p class="text-brand-green animate-pulse">> ESCANEANDO REQUERIMIENTOS...</p>';
+
+                    setTimeout(() => {
+                        out.innerHTML = `
+                            <div class="space-y-6">
+                                <p class="text-brand-green">*** ANÁLISIS DE PROYECTO FINALIZADO ***</p>
+                                <p class="text-white font-bold underline">ID_CLIENTE: ${name || 'ANÓNIMO'}</p>
+                                <div class="text-brand-light/80 italic">"${desc}"</div>
+                                <div class="p-4 bg-brand-green/5 border-l-2 border-brand-green">
+                                    <p class="text-white text-xs font-bold mb-2 uppercase">Hoja de Ruta Sugerida:</p>
+                                    <ul class="text-xs space-y-1 text-brand-green">
+                                        <li>> ARQUITECTURA: MVC Estructurado</li>
+                                        <li>> BASE DE DATOS: MySQL Normalizada</li>
+                                        <li>> SEGURIDAD: ForgeLock Core Auth</li>
+                                    </ul>
+                                </div>
+                                <p class="text-[10px] text-gray-500">SISTEMA LISTO PARA ASIGNACIÓN DE DESARROLLADOR_</p>
+                            </div>
+                        `;
+                    }, 1500);
+                };
+            }
+
+            sendBtn.onclick = () => {
+                const name = document.getElementById('contact-name').value.trim();
+                const email = document.getElementById('contact-email').value.trim();
+                const subject = document.getElementById('contact-subject').value.trim();
+                const message = document.getElementById('contact-message').value.trim();
+
+                if (!name || !email || !subject || !message) {
+                    alert('Por favor, rellena todos los campos para poder redactar el correo.');
+                    return;
+                }
+
+                const recipient = 'diego.jimez.22@gmail.com';
+                const emailSubject = `[PORTAL WEB] ${subject}`;
+                const emailBody = `Hola Diego,\n\nHas recibido un nuevo mensaje desde tu plataforma SecureForge:\n\n`
+                    + `-----------------------------------\n`
+                    + `CLIENTE: ${name}\n`
+                    + `EMAIL DE CONTACTO: ${email}\n`
+                    + `ASUNTO: ${subject}\n`
+                    + `-----------------------------------\n\n`
+                    + `MENSAJE:\n${message}\n\n`
+                    + `-----------------------------------\n`
+                    + `Fin del mensaje automático.`;
+                    + `Enviado desde el portal SecureForge Systems.`;
+
+                const mailtoUrl = `mailto:${recipient}?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
+                sendBtn.innerHTML = '<i class="ph ph-circle-notch animate-spin"></i> REDACTANDO...';
+                const originalContent = sendBtn.innerHTML;
+                sendBtn.innerHTML = '<i class="ph ph-circle-notch animate-spin"></i> Abriendo cliente de correo...';
+                sendBtn.disabled = true;
+
+                setTimeout(() => {
+                    window.location.href = mailtoUrl;
+                    sendBtn.innerHTML = '<i class="ph ph-paper-plane-tilt"></i> Enviar Mensaje a Diego';
+                    window.open(mailtoUrl, '_blank');
+                    sendBtn.innerHTML = originalContent;
+                    sendBtn.disabled = false;
+                }, 800);
+            };
+        });
+    </script>
+</body>
+</html>

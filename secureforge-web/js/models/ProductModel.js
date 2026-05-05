@@ -5,21 +5,21 @@ export const productsData = [
     {
         id: 1,
         title: "SecureGuard CRM",
-        type: "Software Enterprise",
+        product_type: "saas",
         icon: "ph-shield-plus",
         description: "Sistema de gestión de clientes con encriptación de extremo a extremo y auditoría de accesos integrada.",
-        techStack: ["ES6", "Node.js", "MVC"],
-        price: "$499 USD",
+        tech_stack: ["ES6", "Node.js", "MVC"],
+        price_cop: 499000.00,
         status: "Available"
     },
     {
         id: 2,
         title: "ForgeLock Auth",
-        type: "Librería de Seguridad",
+        product_type: "library",
         icon: "ph-fingerprint",
         description: "Módulo de autenticación biométrica y MFA listo para integrar en cualquier plataforma web moderna.",
-        techStack: ["Vanilla JS", "WebAuthn"],
-        price: "$150 USD",
+        tech_stack: ["Vanilla JS", "WebAuthn"],
+        price_cop: 180000.00,
         status: "LTS"
     }
 ];
