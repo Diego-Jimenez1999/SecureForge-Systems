@@ -74,4 +74,14 @@ public final class ApplicationConfig {
         }
         return value.trim();
     }
+
+    // Métodos para obtener propiedades de correo
+    public String getMailSmtpHost() { return get("mail.smtp.host"); }
+    public String getMailSmtpPort() { return get("mail.smtp.port"); }
+    public String getMailSmtpAuth() { return get("mail.smtp.auth"); }
+    public String getMailSmtpStarttlsEnable() { return get("mail.smtp.starttls.enable"); }
+    public String getMailSmtpSslTrust() { return get("mail.smtp.ssl.trust"); }
+    public String getMailFromAddress() { return get("mail.from.address"); }
+    public String getMailFromPassword() { return get("mail.from.password"); }
+    public String getMailAdminAddress() { return get("mail.admin.address"); }
 }

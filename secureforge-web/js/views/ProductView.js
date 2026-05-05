@@ -59,6 +59,9 @@ export default class ProductView {
                     <button class="btn-action px-5 py-2 rounded text-xs font-bold uppercase tracking-widest" data-name="${product.title}" data-price="$${product.price_cop.toLocaleString()} COP">
                         Adquirir
                     </button>
+                    <button class="btn-secondary px-5 py-2 rounded text-xs font-bold uppercase tracking-widest border border-brand-green text-brand-green btn-detail-project" data-id="${product.id}">
+                        Ver Detalles
+                    </button>
                 </div>
             </article>
         `;

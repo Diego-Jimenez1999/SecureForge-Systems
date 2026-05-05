@@ -46,11 +46,22 @@
                 </div>
 
                 <nav class="hidden md:flex space-x-8">
+                    <a href="#inicio" class="nav-link">Inicio</a>
                     <a href="#servicios" class="nav-link">Servicios</a>
                     <a href="#productos" class="nav-link">Proyectos</a>
                     <a href="#generar" class="nav-link">Nuevo Proyecto</a>
                     <a href="#contacto" class="nav-link">Contacto</a>
                 </nav>
+                
+                <!-- Mobile Menu (Hidden by default) -->
+                <div id="mobile-menu" class="hidden md:hidden absolute top-20 left-0 w-full bg-brand-dark/95 backdrop-blur-md border-b border-gray-800 py-4 text-center">
+                    <a href="#inicio" class="block py-2 text-lg text-white hover:text-brand-green">Inicio</a>
+                    <a href="#servicios" class="block py-2 text-lg text-white hover:text-brand-green">Servicios</a>
+                    <a href="#productos" class="block py-2 text-lg text-white hover:text-brand-green">Proyectos</a>
+                    <a href="#generar" class="block py-2 text-lg text-white hover:text-brand-green">Nuevo Proyecto</a>
+                    <a href="#contacto" class="block py-2 text-lg text-white hover:text-brand-green">Contacto</a>
+                    <a href="#generar" class="btn-action py-2 px-6 rounded-md font-semibold mt-4 inline-block">Iniciar Proyecto</a>
+                </div>
 
                 <div class="hidden md:flex">
                     <a href="#generar" class="btn-action py-2 px-6 rounded-md font-semibold">Iniciar Proyecto</a>
@@ -66,7 +77,7 @@
     <main class="flex-grow">
         <!-- Hero Section -->
         <section class="pt-32 pb-20 lg:pt-48 px-4 max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12">
-            <div class="flex-1 text-center lg:text-left">
+            <div id="inicio" class="flex-1 text-center lg:text-left">
                 <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-card border border-brand-green/30 text-brand-green text-sm font-mono mb-6">
                     <i class="ph ph-shield-check"></i> <span>Protocolo SecureForge v1.0</span>
                 </div>
@@ -107,17 +118,17 @@
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <div class="p-8 bg-brand-card rounded-xl border border-gray-800 hover:border-brand-green/50 transition-colors">
-                        <i class="ph ph-code text-brand-green text-4xl mb-4"></i>
+                        <i class="ph ph-code text-brand-green text-4xl mb-4 block"></i>
                         <h3 class="text-xl font-bold text-white mb-2">Desarrollo a Medida</h3>
                         <p class="text-brand-light/60 text-sm">Sistemas robustos construidos con las últimas tecnologías y patrones de diseño modernos.</p>
                     </div>
                     <div class="p-8 bg-brand-card rounded-xl border border-gray-800 hover:border-brand-green/50 transition-colors">
-                        <i class="ph ph-shield-checkered text-brand-green text-4xl mb-4"></i>
+                        <i class="ph ph-shield-checkered text-brand-green text-4xl mb-4 block"></i>
                         <h3 class="text-xl font-bold text-white mb-2">Auditoría de Seguridad</h3>
                         <p class="text-brand-light/60 text-sm">Análisis profundo de vulnerabilidades y fortalecimiento de infraestructura digital.</p>
                     </div>
                     <div class="p-8 bg-brand-card rounded-xl border border-gray-800 hover:border-brand-green/50 transition-colors">
-                        <i class="ph ph-cpu text-brand-green text-4xl mb-4"></i>
+                        <i class="ph ph-cpu text-brand-green text-4xl mb-4 block"></i>
                         <h3 class="text-xl font-bold text-white mb-2">Consultoría Técnica</h3>
                         <p class="text-brand-light/60 text-sm">Asesoramiento en arquitectura de software y escalabilidad de sistemas críticos.</p>
                     </div>
@@ -155,7 +166,7 @@
                                 <label class="text-[10px] font-bold text-brand-green uppercase mb-2 block tracking-widest">Descripción Detallada</label>
                                 <textarea id="project-desc" rows="5" class="w-full bg-brand-dark border border-gray-700 rounded p-4 text-white transition-colors resize-none" placeholder="¿Qué necesitas construir?"></textarea>
                             </div>
-                            <button type="button" id="generate-btn" class="w-full btn-action py-4 rounded font-bold text-sm tracking-widest uppercase">Procesar Requerimientos</button>
+                            <button type="submit" id="generate-btn" class="w-full btn-action py-4 rounded font-bold text-sm tracking-widest uppercase">Procesar Requerimientos</button>
                         </form>
                     </div>
                     <div class="bg-black/40 border border-brand-green/20 rounded-xl p-8 font-mono text-sm min-h-[400px]">
@@ -163,6 +174,10 @@
                             <p class="animate-pulse">> CONSOLA DE ANÁLISIS ESPERANDO DATOS...</p>
                         </div>
                     </div>
+                </div>
+                <div id="quote-action-container" class="text-center mt-8 hidden">
+                    <p class="text-brand-light/60 mb-4">¿Listo para dar el siguiente paso?</p>
+                    <button id="send-quote-btn" class="btn-action py-3 px-8 rounded-md font-bold text-sm tracking-widest uppercase">Enviar Solicitud de Cotización</button>
                 </div>
             </div>
         </section>
@@ -183,7 +198,7 @@
                                 </div>
                                 <div>
                                     <p class="text-[10px] font-bold text-gray-500 uppercase">Correo Personal</p>
-                                    <p class="text-brand-light text-sm">diego.jimez.22@gmail.com</p>
+                                    <p class="text-brand-light text-sm">diego.jimez22@gmail.com</p>
                                 </div>
                             </div>
 
@@ -194,7 +209,7 @@
                                     </div>
                                     <div>
                                         <p class="text-[10px] font-bold text-gray-500 uppercase">WhatsApp</p>
-                                        <p class="text-white font-mono text-sm">3043042589</p>
+                                        <p class="text-white font-mono text-sm">+57 304 3042589</p>
                                     </div>
                                 </div>
                                 <a href="https://wa.me/573043042589" target="_blank" rel="noopener noreferrer" class="w-full bg-green-600 hover:bg-green-500 text-white py-3 rounded-lg text-center font-bold text-xs uppercase tracking-widest flex items-center justify-center gap-2 transition-all">
@@ -224,7 +239,7 @@
                                     <textarea id="contact-message" rows="5" class="w-full bg-brand-dark border border-gray-700 rounded p-3 text-white transition-colors" placeholder="Escribe aquí tu solicitud..." required></textarea>
                                 </div>
                                 <div class="md:col-span-2">
-                                    <button type="button" id="send-contact-btn" class="w-full btn-action py-4 rounded font-bold uppercase tracking-widest text-sm flex items-center justify-center gap-2 shadow-lg group">
+                                    <button type="submit" id="send-contact-btn" class="w-full btn-action py-4 rounded font-bold uppercase tracking-widest text-sm flex items-center justify-center gap-2 shadow-lg group">
                                         <i class="ph ph-paper-plane-tilt group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"></i>
                                         Enviar Mensaje a Diego
                                     </button>
@@ -232,7 +247,7 @@
                             </form>
                         </div>
                         <p class="text-[10px] text-gray-600 mt-4 text-center font-mono uppercase tracking-widest italic">
-                            Al hacer clic, se redactará un correo automático a diego.jimez.22@gmail.com
+                            Al hacer clic, se redactará un correo automático a diego.jimez22@gmail.com
                         </p>
                     </div>
                 </div>
@@ -240,8 +255,9 @@
         </section>
     </main>
 
-    <div id="payment-modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 bg-brand-dark/95 backdrop-blur-md">
-        <div class="bg-brand-card w-full max-w-md rounded-2xl border border-gray-700 overflow-hidden shadow-2xl">
+    <!-- Modal de Pago Nequi (Original) -->
+    <div id="nequi-payment-modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 bg-brand-dark/95 backdrop-blur-md">
+        <div class="bg-brand-card w-full max-w-md rounded-2xl border border-gray-700 overflow-hidden shadow-2xl relative">
             <div class="bg-brand-nequi p-6 flex justify-between items-center text-white">
                 <div class="flex items-center gap-2">
                     <i class="ph ph-qr-code text-2xl"></i>
@@ -249,7 +265,7 @@
                 </div>
                 <button id="close-modal" class="hover:bg-black/20 rounded-full p-1" aria-label="Cerrar modal">
                     <i class="ph ph-x"></i>
-                </button>
+                </button> 
             </div>
             <div class="p-8">
                 <div class="mb-6 border-b border-gray-800 pb-4">
@@ -273,124 +289,105 @@
         </div>
     </div>
 
+    <!-- Nuevo Modal de Compra (Formulario) -->
+    <div id="purchase-modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 bg-brand-dark/95 backdrop-blur-md">
+        <div class="bg-brand-card w-full max-w-lg rounded-2xl border border-gray-700 overflow-hidden shadow-2xl relative">
+            <div class="bg-brand-green p-6 flex justify-between items-center text-white">
+                <div class="flex items-center gap-2">
+                    <i class="ph ph-shopping-cart text-2xl"></i>
+                    <span class="font-bold font-poppins tracking-tight uppercase">Adquirir <span id="purchase-product-name"></span></span>
+                </div>
+                <button id="close-purchase-modal" class="hover:bg-black/20 rounded-full p-1" aria-label="Cerrar modal">
+                    <i class="ph ph-x"></i>
+                </button>
+            </div>
+            <div class="p-8">
+                <form id="purchase-form" class="space-y-6">
+                    <div>
+                        <label class="text-[10px] font-bold text-brand-green uppercase mb-2 block tracking-widest">Tu Nombre</label>
+                        <input type="text" id="purchase-client-name" class="w-full bg-brand-dark border border-gray-700 rounded p-3 text-white transition-colors" placeholder="Nombre Completo" required>
+                    </div>
+                    <div>
+                        <label class="text-[10px] font-bold text-brand-green uppercase mb-2 block tracking-widest">Tu Correo</label>
+                        <input type="email" id="purchase-client-email" class="w-full bg-brand-dark border border-gray-700 rounded p-3 text-white transition-colors" placeholder="correo@ejemplo.com" required>
+                    </div>
+                    <div>
+                        <label class="text-[10px] font-bold text-brand-green uppercase mb-2 block tracking-widest">Tu Teléfono</label>
+                        <input type="tel" id="purchase-client-phone" class="w-full bg-brand-dark border border-gray-700 rounded p-3 text-white transition-colors" placeholder="+57 3XX XXX XXXX" required>
+                    </div>
+                    <div>
+                        <label class="text-[10px] font-bold text-brand-green uppercase mb-2 block tracking-widest">Comprobante de Pago (Opcional)</label>
+                        <input type="file" id="purchase-comprobante" class="w-full bg-brand-dark border border-gray-700 rounded p-3 text-white transition-colors file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-brand-green/20 file:text-brand-green hover:file:bg-brand-green/30">
+                        <p class="text-[10px] text-gray-500 mt-2">Adjunta tu comprobante si ya realizaste el pago.</p>
+                    </div>
+                    <input type="hidden" id="purchase-hidden-product-name">
+                    <input type="hidden" id="purchase-hidden-product-price">
+                    <button type="submit" id="submit-purchase-btn" class="w-full btn-action py-4 rounded font-bold uppercase tracking-widest text-sm flex items-center justify-center gap-2 shadow-lg group">
+                        <i class="ph ph-check-circle group-hover:scale-110 transition-transform"></i>
+                        Enviar Solicitud de Compra
+                    </button>
+                </form>
+                <div id="purchase-success-message" class="hidden text-center mt-6 text-white">
+                    <i class="ph ph-check-circle text-brand-green text-5xl mb-4"></i>
+                    <h3 class="text-2xl font-bold mb-2">¡Solicitud Recibida!</h3>
+                    <p class="text-brand-light/80">Pronto nos comunicaremos contigo para confirmar tu compra.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Detalle de Servicio -->
+    <div id="service-detail-modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 bg-brand-dark/95 backdrop-blur-md">
+        <div class="bg-brand-card w-full max-w-2xl rounded-2xl border border-gray-700 overflow-hidden shadow-2xl relative">
+            <div class="bg-brand-green p-6 flex justify-between items-center text-white">
+                <h3 id="service-detail-title" class="font-bold font-poppins tracking-tight uppercase text-xl"></h3>
+                <button id="close-service-modal" class="hover:bg-black/20 rounded-full p-1" aria-label="Cerrar modal">
+                    <i class="ph ph-x"></i>
+                </button>
+            </div>
+            <div class="p-8 max-h-[80vh] overflow-y-auto">
+                <p id="service-detail-description" class="text-brand-light/80 mb-4"></p>
+                <h4 class="text-lg font-bold text-white mb-2">Beneficios:</h4>
+                <ul id="service-detail-benefits" class="list-disc list-inside text-brand-light/80 mb-4 space-y-1"></ul>
+                <h4 class="text-lg font-bold text-white mb-2">Casos de Uso:</h4>
+                <ul id="service-detail-use-cases" class="list-disc list-inside text-brand-light/80 mb-6 space-y-1"></ul>
+                <div class="text-center">
+                    <a href="#contacto" id="service-detail-cta" class="btn-action py-3 px-8 rounded-md text-center">Contactar para este Servicio</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Detalle de Proyecto -->
+    <div id="project-detail-modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 bg-brand-dark/95 backdrop-blur-md">
+        <div class="bg-brand-card w-full max-w-3xl rounded-2xl border border-gray-700 overflow-hidden shadow-2xl relative">
+            <div class="bg-brand-green p-6 flex justify-between items-center text-white">
+                <h3 id="project-detail-title" class="font-bold font-poppins tracking-tight uppercase text-xl"></h3>
+                <button id="close-project-modal" class="hover:bg-black/20 rounded-full p-1" aria-label="Cerrar modal">
+                    <i class="ph ph-x"></i>
+                </button>
+            </div>
+            <div class="p-8 max-h-[80vh] overflow-y-auto">
+                <div id="project-detail-images" class="grid grid-cols-2 gap-4 mb-6"></div>
+                <p id="project-detail-description" class="text-brand-light/80 mb-4"></p>
+                <h4 class="text-lg font-bold text-white mb-2">Arquitectura:</h4>
+                <p id="project-detail-architecture" class="text-brand-light/80 mb-4"></p>
+                <h4 class="text-lg font-bold text-white mb-2">Tecnologías Clave:</h4>
+                <div id="project-detail-tech-stack" class="flex flex-wrap gap-2 mb-6"></div>
+                <div class="p-4 bg-brand-card/50 border-l-4 border-brand-green text-brand-light/80 italic text-sm">
+                    <p>💡 Este sistema puede adaptarse y personalizarse completamente para las necesidades específicas de cualquier negocio.</p>
+                </div>
+                <div class="text-center mt-6">
+                    <a href="#generar" id="project-detail-cta" class="btn-action py-3 px-8 rounded-md text-center">Solicitar Adaptación de Proyecto</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <footer class="bg-brand-dark border-t border-gray-800 py-8 text-center text-sm text-gray-500">
         <p>&copy; 2026 SecureForge Systems. Arquitectura MVC.</p>
     </footer>
-
+    
     <script type="module" src="js/app.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const sendBtn = document.getElementById('send-contact-btn');
-            const paymentModal = document.getElementById('payment-modal');
-            const closeModalBtn = document.getElementById('close-modal');
-            const confirmPayBtn = document.getElementById('confirm-pay');
-            const targetName = document.getElementById('target-name');
-            const targetPrice = document.getElementById('target-price');
-            const generateBtn = document.getElementById('generate-btn');
-            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-            const navMenu = document.querySelector('nav.hidden.md\\:flex');
-
-            if (!sendBtn) {
-                return;
-            }
-
-            mobileMenuBtn.onclick = () => {
-                // Lógica simple para toggle de menú móvil (necesitaría clases CSS adicionales)
-                alert('Funcionalidad de menú móvil en desarrollo.');
-            };
-
-            window.addEventListener('secureforge:checkout', (event) => {
-                const { name, price } = event.detail;
-                targetName.textContent = name;
-                targetPrice.textContent = price;
-                paymentModal.classList.replace('hidden', 'flex');
-                document.body.style.overflow = 'hidden';
-            });
-
-            closeModalBtn.onclick = () => {
-                paymentModal.classList.replace('flex', 'hidden');
-                document.body.style.overflow = 'auto';
-            };
-
-            confirmPayBtn.onclick = () => {
-                alert('Pago registrado. Envíanos tu comprobante por WhatsApp al 3043042589 para activar el servicio.');
-                paymentModal.classList.replace('flex', 'hidden');
-                document.body.style.overflow = 'auto';
-            };
-
-            if (generateBtn) {
-                generateBtn.onclick = () => {
-                    const name = document.getElementById('client-name').value.trim();
-                    const desc = document.getElementById('project-desc').value.trim();
-                    const out = document.getElementById('briefing-content');
-
-                    if (!desc) {
-                        alert('Por favor, redacta tu idea.');
-                        return;
-                    }
-
-                    out.innerHTML = '<p class="text-brand-green animate-pulse">> ESCANEANDO REQUERIMIENTOS...</p>';
-
-                    setTimeout(() => {
-                        out.innerHTML = `
-                            <div class="space-y-6">
-                                <p class="text-brand-green">*** ANÁLISIS DE PROYECTO FINALIZADO ***</p>
-                                <p class="text-white font-bold underline">ID_CLIENTE: ${name || 'ANÓNIMO'}</p>
-                                <div class="text-brand-light/80 italic">"${desc}"</div>
-                                <div class="p-4 bg-brand-green/5 border-l-2 border-brand-green">
-                                    <p class="text-white text-xs font-bold mb-2 uppercase">Hoja de Ruta Sugerida:</p>
-                                    <ul class="text-xs space-y-1 text-brand-green">
-                                        <li>> ARQUITECTURA: MVC Estructurado</li>
-                                        <li>> BASE DE DATOS: MySQL Normalizada</li>
-                                        <li>> SEGURIDAD: ForgeLock Core Auth</li>
-                                    </ul>
-                                </div>
-                                <p class="text-[10px] text-gray-500">SISTEMA LISTO PARA ASIGNACIÓN DE DESARROLLADOR_</p>
-                            </div>
-                        `;
-                    }, 1500);
-                };
-            }
-
-            sendBtn.onclick = () => {
-                const name = document.getElementById('contact-name').value.trim();
-                const email = document.getElementById('contact-email').value.trim();
-                const subject = document.getElementById('contact-subject').value.trim();
-                const message = document.getElementById('contact-message').value.trim();
-
-                if (!name || !email || !subject || !message) {
-                    alert('Por favor, rellena todos los campos para poder redactar el correo.');
-                    return;
-                }
-
-                const recipient = 'diego.jimez.22@gmail.com';
-                const emailSubject = `[PORTAL WEB] ${subject}`;
-                const emailBody = `Hola Diego,\n\nHas recibido un nuevo mensaje desde tu plataforma SecureForge:\n\n`
-                    + `-----------------------------------\n`
-                    + `CLIENTE: ${name}\n`
-                    + `EMAIL DE CONTACTO: ${email}\n`
-                    + `ASUNTO: ${subject}\n`
-                    + `-----------------------------------\n\n`
-                    + `MENSAJE:\n${message}\n\n`
-                    + `-----------------------------------\n`
-                    + `Fin del mensaje automático.`;
-                    + `Enviado desde el portal SecureForge Systems.`;
-
-                const mailtoUrl = `mailto:${recipient}?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
-                sendBtn.innerHTML = '<i class="ph ph-circle-notch animate-spin"></i> REDACTANDO...';
-                const originalContent = sendBtn.innerHTML;
-                sendBtn.innerHTML = '<i class="ph ph-circle-notch animate-spin"></i> Abriendo cliente de correo...';
-                sendBtn.disabled = true;
-
-                setTimeout(() => {
-                    window.location.href = mailtoUrl;
-                    sendBtn.innerHTML = '<i class="ph ph-paper-plane-tilt"></i> Enviar Mensaje a Diego';
-                    window.open(mailtoUrl, '_blank');
-                    sendBtn.innerHTML = originalContent;
-                    sendBtn.disabled = false;
-                }, 800);
-            };
-        });
-    </script>
 </body>
 </html>
