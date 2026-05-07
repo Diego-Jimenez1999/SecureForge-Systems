@@ -87,8 +87,20 @@ export default class PurchaseModal {
         this.submitBtn.disabled = true;
         this.submitBtn.innerHTML = '<i class="ph ph-circle-notch animate-spin"></i> PROCESANDO...';
 
-        const formData = new FormData(this.form);
-        formData.append('product', this.displayProductName.innerText);
+        const formData = new FormData();
+        // Recopila los datos del formulario para el DTO
+        const paymentData = {
+            productName: this.displayProductName.innerText,
+            name: this.form.elements['name'].value,
+            email: this.form.elements['email'].value,
+            phone: this.form.elements['phone'].value,
+        };
+        formData.append('paymentData', new Blob([JSON.stringify(paymentData)], { type: 'application/json' }));
+        
+        // Añade el archivo si existe
+        if (this.fileInput.files.length > 0) {
+            formData.append('receipt', this.fileInput.files[0]);
+        }
 
         try {
             await PurchaseService.submitPurchase(formData);

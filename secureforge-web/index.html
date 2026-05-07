@@ -388,12 +388,11 @@
         <p>&copy; 2026 SecureForge Systems. Arquitectura MVC.</p>
     </footer>
     
-    <script type="module" src="js/app.js"></script>
     <!-- SISTEMA DE COMPRA MODULAR -->
     <div id="purchase-flow-modal" class="fixed inset-0 z-[110] hidden items-center justify-center p-4 bg-brand-dark/95 backdrop-blur-sm">
         <div class="bg-brand-card w-full max-w-lg rounded-xl border border-gray-700 overflow-hidden shadow-2xl">
             <div class="bg-brand-green p-4 flex justify-between items-center text-brand-dark">
-                <span class="font-bold font-poppins text-xs uppercase tracking-tighter">Formulario de Adquisición</span>
+                <span class="font-bold font-poppins text-xs uppercase tracking-tighter">Formulario de Adquisición de Producto</span>
                 <button class="close-modal hover:opacity-70 transition-opacity"><i class="ph ph-x font-bold"></i></button>
             </div>
             
@@ -448,11 +447,7 @@
         </div>
     </div>
 
-    <script type="module">
-        import PurchaseModal from './js/controllers/purchaseModal.js';
-        document.addEventListener('DOMContentLoaded', () => {
-            new PurchaseModal();
-        });
-    </script>
+    <!-- Script principal de la aplicación y módulos -->
+    <script type="module" src="js/app.js"></script>
 </body>
 </html>

@@ -1,10 +1,13 @@
-package secureauth.config;
+package secureauth.service;
 
 import secureauth.service.EmailService;
 
 import java.time.LocalDateTime;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
+import secureauth.config.MensajeContacto;
+import secureauth.config.MensajeContactoDAO;
 
 /**
  * Servicio para manejar mensajes de contacto.

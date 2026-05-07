@@ -6,6 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.sql.Timestamp;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -31,12 +32,14 @@ public class JdbcSolicitudProyectoDAO implements SolicitudProyectoDAO {
 
     @Override
     public void save(SolicitudProyecto solicitud) {
-        String sql = "INSERT INTO solicitudes_proyecto (client_name, description, status) VALUES (?, ?, ?)";
+        String sql = "INSERT INTO solicitudes_proyecto (client_name, description, status, created_at, updated_at) VALUES (?, ?, ?, ?, ?)";
         try (Connection conn = getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
             stmt.setString(1, solicitud.getClientName());
             stmt.setString(2, solicitud.getDescription());
             stmt.setString(3, solicitud.getStatus());
+            stmt.setTimestamp(4, Timestamp.valueOf(solicitud.getCreatedAt()));
+            stmt.setTimestamp(5, Timestamp.valueOf(solicitud.getUpdatedAt()));
             stmt.executeUpdate();
 
             try (ResultSet generatedKeys = stmt.getGeneratedKeys()) {

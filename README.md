@@ -4,6 +4,7 @@ Monorepo con dos proyectos:
 
 - `secureauth-desktop`: aplicación Java Swing con autenticación segura.
 - `secureforge-web`: landing/catálogo web con arquitectura MVC en JavaScript.
+- `secureforge-api`: backend Spring Boot para formularios, compras, recursos y correo.
 
 ## Estructura
 
@@ -21,6 +22,9 @@ SecureForge_Systems/
       models/
       views/
       services/
+  secureforge-api/
+    pom.xml
+    src/
 ```
 
 ## Ejecución rápida

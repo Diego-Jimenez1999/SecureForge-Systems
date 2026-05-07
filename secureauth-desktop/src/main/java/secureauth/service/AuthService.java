@@ -1,7 +1,7 @@
 package secureauth.service;
 
 import secureauth.config.ApplicationConfig;
-import secureauth.config.UserDAO;
+import secureauth.dao.UserDAO;
 import secureauth.model.User;
 import secureauth.model.UserRole;
 import secureauth.util.PasswordUtil;
